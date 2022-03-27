@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/container', function () {
+    $container = new App\Container\Container();
+    $container->bind('example', function (){
+         return new App\Example\Example();
+     } );
+     $example = $container->resolve('example');
+     $example->go();
+    dd($example);
+
+});
