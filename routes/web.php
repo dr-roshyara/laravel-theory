@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    // dd("test");
+    return View::make('welcome');
 });
 
 Route::get('/container', function () {
@@ -24,6 +26,10 @@ Route::get('/container', function () {
      } );
      $example = $container->resolve('example');
      $example->go();
-    dd($example);
+    // dd($example);
 
+});
+Route::get('/example', function () {
+    $example = app('example');
+    $example->handle();
 });

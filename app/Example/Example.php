@@ -6,4 +6,8 @@ class Example {
     public function go (){
         dd("it Works ");
     }
+    public function handle(){
+        echo "it works";
+        
+    }
 }
