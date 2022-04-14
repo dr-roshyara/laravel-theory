@@ -6,6 +6,29 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+### How to implement User Repository 
+Implementation of Laravel Repository has three parts. 
+1. Creation of Interface 
+2. Creation of Repository 
+3. Coupuling the interface and repository 
+
+### Creating of UserInterface 
+    - Create the file : app\Repositories\User\UserInterface.php 
+    -Add the follwowing code in it 
+    <?php namespace App\Repositories\User;
+     interface RepositoryInterface
+        {
+            public function all();
+
+            public function create(array $data);
+
+            public function update(array $data, $id);
+
+            public function delete($id);
+
+            public function show($id);
+        }
+
 
 ## About Laravel
 
